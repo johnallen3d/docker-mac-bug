@@ -1,0 +1,9 @@
+version: '2'
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/var/www/app
+            - ./other:/var/www/other
