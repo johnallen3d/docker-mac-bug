@@ -7,3 +7,7 @@ services:
         volumes:
             - .:/var/www/app
             - ./other:/var/www/other
+            - nodemodules:/var/www/app/node_modules
+
+volumes:
+    nodemodules: {}

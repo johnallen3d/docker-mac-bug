@@ -8,4 +8,4 @@ echo "starting inotifywait"
 
 trap 'killall -9 inotifywait' QUIT EXIT TERM
 
-inotifywait -m /var/www/app/test.txt /var/www/other/testother.txt
+inotifywait -m /var/www/app/ /var/www/other/ /var/www/app/test/
