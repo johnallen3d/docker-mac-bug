@@ -10,6 +10,6 @@ RUN mkdir -p /var/www/app/node_modules
 RUN chown -R www-data:www-data /var/www/app/node_modules
 VOLUME /var/www/app/node_modules
 
-WORKDIR /var/www
+WORKDIR /var/www/app
 
 CMD ["entry.sh"]
