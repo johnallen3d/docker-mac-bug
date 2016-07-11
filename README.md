@@ -1,23 +1,13 @@
 # docker-mac-bug
 
-This reproduces an inotify bug in docker for mac beta.
+This reproduces a bug in docker for mac beta.
 
-Run test.sh. It will output the containers logs. 
-You should see inotify events for both /var/www/app/test.txt and /var/www/other/testother.txt.
-
-E.g.:
-
-```
-app_1  | starting inotifywait
-app_1  | Setting up watches.
-app_1  | Watches established.
-app_1  | starting inotifywait
-app_1  | Setting up watches.
-app_1  | Watches established.
-app_1  | /var/www/app/test.txt OPEN 
-app_1  | /var/www/app/test.txt ATTRIB 
-app_1  | /var/www/app/test.txt CLOSE_WRITE,CLOSE 
-app_1  | /var/www/other/testother.txt OPEN 
-app_1  | /var/www/other/testother.txt ATTRIB 
-app_1  | /var/www/other/testother.txt CLOSE_WRITE,CLOSE 
-```
+1. run `docker-compose up --build`
+2. in another terminal, run `docker-compose exec app /bin/bash`
+3. run `npm install`
+4. verify that node_modules is not empty: `ls -l node_modules`
+5. run `node index.js`
+6. edit test/test.txt using vim (other editors have not been tested)
+7. you should see index.js output `file changed test.txt`
+8. hit ctrl-c to stop index.js
+9. check node_modules: `ls -l node_modules`. It will be empty.
