@@ -19,7 +19,7 @@ cleanup() {
 
 trap cleanup QUIT EXIT TERM
 
-inotifywait -m /var/www/app/ /etc/go-cron /var/www/app/test/ &
+inotifywait -m /var/www/app/ /etc/gocron /var/www/app/test/ &
 pid=$!
 
 wait $pid
