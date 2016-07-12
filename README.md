@@ -12,6 +12,6 @@ app_1  | starting inotifywait
 app_1  | Setting up watches.
 app_1  | Watches established.
 app_1  | /var/www/app/ MODIFY test.txt
-app_1  | /etc/go-cron/ MODIFY test.txt
+app_1  | /etc/go-cron/ MODIFY testother.txt
 app_1  | /var/www/app/test/ MODIFY test.txt
 ```
