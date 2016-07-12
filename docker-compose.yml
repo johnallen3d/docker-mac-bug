@@ -6,7 +6,7 @@ services:
             dockerfile: Dockerfile
         volumes:
             - .:/var/www/app
-            - ./other:/var/www/other
+            - ./other:/etc/go-cron
             - nodemodules:/var/www/app/node_modules
 
 volumes:
